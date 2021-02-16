@@ -1,4 +1,5 @@
-package com.example.hellotome.demo.model
+package com.example.hellotome.demo.model;
+
 public class Employee {
  
    public Employee() {
