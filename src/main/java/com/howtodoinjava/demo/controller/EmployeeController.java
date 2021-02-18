@@ -47,7 +47,6 @@ public class EmployeeController {
 			}
 		}
 
-
 		return employeesList;
     }
 
