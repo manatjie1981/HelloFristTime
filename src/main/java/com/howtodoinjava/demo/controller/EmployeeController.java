@@ -27,7 +27,6 @@ public class EmployeeController {
 			e.printStackTrace();
 		}
 
-
 		employeesList.add(new Employee(1,str,"gupta","howtodoinjava@gmail.com"));
 		return employeesList;
     }
