@@ -37,7 +37,6 @@ public class EmployeeController {
 		}catch (Exception e){
 			e.printStackTrace();
 		}finally {
-			// Close
 			try {
 				if(con != null){
 					con.close();
