@@ -31,7 +31,8 @@ public class EmployeeController {
 		return employeesList;
     }
 
-	private static Connection getConnection() throws URISyntaxException, SQLException {
+	private static Connection getConnection() throws URISyntaxException, Exception {
+		Class.forName("com.mysql.jdbc.Driver");
 		String dbUrl = "mysql://b93dc6f07df6ea:313d4648@us-cdbr-east-03.cleardb.com/heroku_70451cd8b61281c?reconnect=true";
 		return DriverManager.getConnection(dbUrl);
 	}
