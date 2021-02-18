@@ -11,6 +11,7 @@ import com.howtodoinjava.demo.model.Employee;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.*;
 
 @RestController
 public class EmployeeController {
@@ -21,13 +22,24 @@ public class EmployeeController {
 		List<Employee> employeesList = new ArrayList<Employee>();
 		String str = "not pass";
 		try {
-			Connection con = getConnection();;
+			Connection con = getConnection();
+			Statement stmt=con.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from guests");
+			String name = "";
+			String sureName = "";
+			String email = "";
+			if(rs.next()){
+				name = rs.getString("firstname");
+				sureName = rs.getString("lastname");
+				email = rs.getString("email");
+			}
 			str = "pass";
+			employeesList.add(new Employee(1,name,sureName,email));
 		}catch (Exception e){
 			e.printStackTrace();
 		}
 
-		employeesList.add(new Employee(1,str,"gupta","howtodoinjava@gmail.com"));
+
 		return employeesList;
     }
 
