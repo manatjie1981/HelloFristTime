@@ -43,8 +43,9 @@ public class EmployeeController {
 		String str="";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connect =  DriverManager.getConnection("jdbc:mysql://mysql-20612-0.cloudclusters.net/HelloTome" +
-					"?user=mydb&password=43213019");
+			String connectionStringURL = "mysql://us-cdbr-east-03.cleardb.com/heroku_70451cd8b61281c";
+			connect = DriverManager.getConnection(connectionStringURL, "b93dc6f07df6ea", "313d4648");
+
 
 			if(connect != null){
 				str = "Database Connected.";
