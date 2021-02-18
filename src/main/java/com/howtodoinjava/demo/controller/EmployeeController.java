@@ -33,8 +33,8 @@ public class EmployeeController {
 
 	private static Connection getConnection() throws URISyntaxException, Exception {
 		Class.forName("org.postgresql.Driver");
-		String dbUrl =   "jdbc:mysql://b93dc6f07df6ea:313d4648@us-cdbr-east-03.cleardb.com/heroku_70451cd8b61281c?reconnect=true";
-		return DriverManager.getConnection(dbUrl);
+		String dbUrl =   "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_70451cd8b61281c";
+		return DriverManager.getConnection(dbUrl,"b93dc6f07df6ea","313d4648");
 	}
 
 	private String connectDB() {
