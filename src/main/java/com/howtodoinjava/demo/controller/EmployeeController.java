@@ -45,6 +45,7 @@ public class EmployeeController {
 			Class.forName("com.mysql.jdbc.Driver");
 			String connectionStringURL = "mysql://us-cdbr-east-03.cleardb.com/heroku_70451cd8b61281c";
 			connect = DriverManager.getConnection(connectionStringURL, "b93dc6f07df6ea", "313d4648");
+
 			
 			if(connect != null){
 				str = "Database Connected.";
