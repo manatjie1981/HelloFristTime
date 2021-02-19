@@ -25,16 +25,18 @@ public class EmployeeController {
 			con = getConnection();
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("select * from guests");
+			int id = 0;
 			String name = "";
 			String sureName = "";
 			String email = "";
 			while(rs.next()){
+				id = rs.getInt("id");
 				name = rs.getString("firstname");
 				sureName = rs.getString("lastname");
 				email = rs.getString("email");
-				employeesList.add(new Employee(1,name,sureName,email));
+				employeesList.add(new Employee(id,name,sureName,email));
 			}
-			
+
 
 		}catch (Exception e){
 			e.printStackTrace();
