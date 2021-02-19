@@ -28,12 +28,14 @@ public class EmployeeController {
 			String name = "";
 			String sureName = "";
 			String email = "";
-			if(rs.next()){
+			while(rs.next()){
 				name = rs.getString("firstname");
 				sureName = rs.getString("lastname");
 				email = rs.getString("email");
+				employeesList.add(new Employee(1,name,sureName,email));
 			}
-			employeesList.add(new Employee(1,name,sureName,email));
+			
+
 		}catch (Exception e){
 			e.printStackTrace();
 		}finally {
